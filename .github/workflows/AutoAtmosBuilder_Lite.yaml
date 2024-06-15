@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - 'README.md'
-      - 'AutoAtmosBuilder.sh'
+      - 'AutoAtmosBuilder_Lite.sh'
   schedule:
     - cron: 0 0 * * *
 
