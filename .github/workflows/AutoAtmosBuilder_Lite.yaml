@@ -12,7 +12,7 @@ on:
     - cron: 0 0 * * *
 
 env:
-  SCRIPT_SH: AutoAtmosBuilder.sh
+  SCRIPT_SH: AutoAtmosBuilder_Lite.sh
   TZ: Asia/Shanghai
 
 jobs:
