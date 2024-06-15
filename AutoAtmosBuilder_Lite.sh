@@ -107,14 +107,14 @@ else
     rm wiliwili-NintendoSwitch.zip
 fi
 
-curl -sL https://raw.github.com/naixue233/naixue_nx_atm_Auto_Script/main/resources/DBI.nro -o DBI.nro
+curl -sL https://raw.github.com/naixue233/AutoAtmosBuilder/main/resources/DBI.nro -o DBI.nro
 if [ $? -ne 0 ]; then
     echo "DBI.nro download\033[31m failed\033[0m."
 else
     echo "DBI.nro download\033[32m success\033[0m."
     mv DBI.nro ./switch/DBI
 fi
-curl -sL https://raw.github.com/naixue233/naixue_nx_atm_Auto_Script/main/resources/.DBI.nro.star -o .DBI.nro.star
+curl -sL https://raw.github.com/naixue233/AutoAtmosBuilder/main/resources/.DBI.nro.star -o .DBI.nro.star
 if [ $? -ne 0 ]; then
     echo ".DBI.nro.star download\033[31m failed\033[0m."
 else
@@ -135,7 +135,7 @@ else
     mv JKSV.nro ./switch
 fi
 
-curl -sL https://raw.github.com/naixue233/naixue_nx_atm_Auto_Script/main/resources/linkalho.nro -o linkalho.nro
+curl -sL https://raw.github.com/naixue233/AutoAtmosBuilder/main/resources/linkalho.nro -o linkalho.nro
 if [ $? -ne 0 ]; then
     echo "linkalho.nro download\033[31m failed\033[0m."
 else
