@@ -52,7 +52,50 @@ else
     unzip -oq hekate.zip
     rm hekate.zip
 fi
+### Fetch latest MissionControl from https://api.github.com/repos/ndeadly/MissionControl/releases/latest
+curl -sL https://api.github.com/repos/ndeadly/MissionControl/releases/latest \
+  | jq '.tag_name' \
+  | xargs -I {} echo MissionControl {} >> ../description.txt
+curl -sL https://api.github.com/repos/ndeadly/MissionControl/releases/latest \
+  | jq '.assets' | jq '.[0].browser_download_url' \
+  | xargs -I {} curl -sL {} -o MissionControl.zip
+if [ $? -ne 0 ]; then
+    echo "MissionControl download\033[31m failed\033[0m."
+else
+    echo "MissionControl download\033[32m success\033[0m."
+    unzip -oq MissionControl.zip
+    rm MissionControl.zip
+fi
 
+### Fetch latest ldn_mitm from https://api.github.com/repos/spacemeowx2/ldn_mitm/releases/latest
+curl -sL https://api.github.com/repos/spacemeowx2/ldn_mitm/releases/latest \
+  | jq '.tag_name' \
+  | xargs -I {} echo ldn_mitm {} >> ../description.txt
+curl -sL https://api.github.com/repos/spacemeowx2/ldn_mitm/releases/latest \
+  | jq '.assets' | jq '.[0].browser_download_url' \
+  | xargs -I {} curl -sL {} -o ldn_mitm.zip
+if [ $? -ne 0 ]; then
+    echo "ldn_mitm download\033[31m failed\033[0m."
+else
+    echo "ldn_mitm download\033[32m success\033[0m."
+    unzip -oq ldn_mitm.zip
+    rm ldn_mitm.zip
+fi
+
+### Fetch latest ldn_mitm from https://api.github.com/repos/masagrator/SaltyNX/releases/latest
+curl -sL https://api.github.com/repos/masagrator/SaltyNX/releases/latest \
+  | jq '.name' \
+  | xargs -I {} echo {} >> ../description.txt
+curl -sL https://api.github.com/repos/masagrator/SaltyNX/releases/latest \
+  | jq '.assets' | jq '.[0].browser_download_url' \
+  | xargs -I {} curl -sL {} -o SaltyNX.zip
+if [ $? -ne 0 ]; then
+    echo "SaltyNX download\033[31m failed\033[0m."
+else
+    echo "SaltyNX download\033[32m success\033[0m."
+    unzip -oq SaltyNX.zip
+    rm SaltyNX.zip
+fi
 ### Fetch latest Bootloader-Resources from https://github.com/naixue233/SwitchScript
 curl -sL https://raw.github.com/naixue233/AutoAtmosBuilder_Lite/main/resources/bootloader.zip -o bootloader.zip
 if [ $? -ne 0 ]; then
@@ -332,13 +375,13 @@ curl -sL https://api.github.com/repos/ndeadly/MissionControl/releases/latest \
   | jq '.assets' | jq '.[0].browser_download_url' \
   | xargs -I {} curl -sL {} -o MissionControl.zip
 
-if [ $? -ne 0 ]; then
-    echo "MissionControl download\033[31m failed\033[0m."
-else
-    echo "MissionControl download\033[32m success\033[0m."
-    unzip -oq MissionControl.zip
-    rm MissionControl.zip
-fi
+# if [ $? -ne 0 ]; then
+#     echo "MissionControl download\033[31m failed\033[0m."
+# else
+#     echo "MissionControl download\033[32m success\033[0m."
+#     unzip -oq MissionControl.zip
+#     rm MissionControl.zip
+# fi
 
 
 ###
